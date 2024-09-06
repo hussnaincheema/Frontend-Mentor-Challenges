@@ -1,0 +1,142 @@
+:root {
+  --moderatevoilet: hsl(263, 55%, 52%);
+  --darkgrayishblue: hsl(217, 19%, 35%);
+  --darkblackishblue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+  --lightgray: hsl(0, 0%, 81%);
+  --lightgrayishblue: hsl(210, 46%, 95%);
+  --font: 13px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--lightgray);
+  margin: 0;
+  padding: 0;
+}
+
+h4{
+    font-weight: bold;
+}
+
+.quote{
+    font-weight: bolder;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+p{
+    line-height: 1.5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, min-content);
+  gap: 20px;
+  padding: 10px;
+}
+
+.grid .testimonial1{
+    background-image: url(images/bg-pattern-quotation.svg);
+    background-color: var(--moderatevoilet);
+    background-repeat: no-repeat;
+    background-position: 80% 0;
+    grid-column: 1/3;
+    border-radius: 10px;
+    padding: 30px; 
+}
+
+.testimonial1, .testimonial2, .testimonial5{
+    color: var(--lightgrayishblue);
+}
+
+.grid >div .profile{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.grid >div .profile img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 2px solid var(--lightgrayishblue);
+}
+
+.grid .testimonial2{
+    background-color: var(--darkgrayishblue);
+    grid-column: 3/4;
+    border-radius: 10px;
+    padding: 30px
+}
+
+.grid .testimonial3{
+    background-color: var(--white);
+    grid-column: 4/5;
+    grid-row: 1/3;
+    border-radius: 10px;
+    padding: 30px
+}
+
+.grid .testimonial4{
+    background-color: var(--white);
+    grid-column: 1/2;
+    grid-row: 2/3;
+    border-radius: 10px;
+    padding: 30px
+}
+
+.grid .testimonial5{
+    background-color: var(--darkblackishblue);
+    grid-column: 2/4;
+    border-radius: 10px;
+    padding: 30px
+}
+
+
+
+@media screen and (max-width: 960px) {
+    .grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(5, auto);
+      grid-template-areas:
+        "testimonial1"
+        "testimonial2"
+        "testimonial4"
+        "testimonial5"
+        "testimonial3";
+    }
+  
+    .grid .testimonial1 {
+      grid-area: testimonial1;
+    }
+  
+    .grid .testimonial2 {
+      grid-area: testimonial2;
+    }
+  
+    .grid .testimonial3 {
+      grid-area: testimonial3;
+    }
+  
+    .grid .testimonial4 {
+      grid-area: testimonial4;
+    }
+  
+    .grid .testimonial5 {
+      grid-area: testimonial5;
+    }
+  }
